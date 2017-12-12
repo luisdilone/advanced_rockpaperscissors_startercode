@@ -50,15 +50,69 @@
 
 var userChoice = "";
 var userName = "Mystery Person";
-var computerChoice = "paper";
+var computerChoice = "";
 var winner = "";
-var choices = ["rock","paper","scissors"]
+var choices = ["rock","paper","scissors"];
+var numbWin = 0;
+var numbLose = 0;
 
 //FUNCTIONS
 
 function process (){
-                        
+        computerChoice = choices[Math.floor(Math.random()*3)];
+                console.log("Comp = " + computerChoice);
+                console.log("User = " + userChoice);
+        if ( userChoice === "rock"){
+                if ( computerChoice === "rock"){
+                        winner = "tie";
                 }
+                else if ( computerChoice === "paper"){
+                        winner = "comp";
+                }
+                else if ( computerChoice === "scissors"){
+                        winner = "user";
+                }
+        }
+        if ( userChoice === "paper"){
+                if ( computerChoice === "rock"){
+                        winner = "user";
+                }
+                else if ( computerChoice === "paper"){
+                        winner = "tie";
+                }
+                else if ( computerChoice === "scissors"){
+                        winner = "comp";
+                }
+        }
+        if ( userChoice === "scissors"){
+                if ( computerChoice === "rock"){
+                        winner = "comp";
+                }
+                else if ( computerChoice === "paper"){
+                        winner= "user";
+                }
+                else if ( computerChoice === "scissors"){
+                        winner = "tie";
+                }
+        }
+        console.log("Winner = " + winner);
+        
+        if (winner === "user"){
+                $("#outcome").append("<p>" + userName + " You Win!!! :D <p>");
+                numbWin = numbWin + 1;
+                $("#numbWin").text(numbWin);
+                
+        }
+        if (winner === "comp"){
+                $("#outcome").append("<p>" + userName + " You Lose!!! :( <p>");
+                numbLose = numbLose + 1;
+                $("#numbLose").text(numbLose);
+        }
+        if (winner === "tie"){
+                $("#outcome").append("<p>" + userName + " You Tied? :/ <p>");
+        }
+}
+                
 
 // DOCUMENT READY FUNCTION
 
