@@ -4,7 +4,7 @@
   <head>
       <title>RPS Game</title>
       <!-- Link CSS here -->
-      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
       <!-- Link JQuery here -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <!-- Link Javascript File here -->
@@ -24,11 +24,12 @@
      -->
     <div class="container text-center">
       <!-- Top -->
+      <div class = "section" id="topdiv">
       <h1> Rock Paper Scissors!!!</h1>
-      <p>Submit your name and click on the image of your weapon of choice</p>
-      
+      <p>Submit your name and click on your weapon of choice</p>
+      </div>
       <!-- Form -->
-      <div id = "form">
+      <div class = "section" id="formdiv">
       <form>
           Name:<br>
           <input type="text" id="name"><br>
@@ -38,7 +39,7 @@
       
       
       <!-- Choices -->
-    
+      <div class= "section" id= "choicesdiv">
       <p>Choice:</p>
       <button class= "choice" id="rock"> Rock</button>
       <button class= "choice" id="paper"> Paper</button>
@@ -53,9 +54,12 @@
         <span>User Wins: </span>
         <span id= "numbWin"></span>
         </div>
-     
+     </div>
       <!-- Outcome -->
+      
+      <div class= "section" id="outcomediv">
       <div id="outcome"><p>Outcomes:</p></div>
+      </div>
     </div>
 
   </body>
